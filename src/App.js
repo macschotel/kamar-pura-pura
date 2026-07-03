@@ -114,7 +114,6 @@ function App() {
 
   useEffect(() => {
     fetchWishes();
-    // fetchWishesFromMe();
     // if (audioRef.current) {
     //   audioRef.current.volume = 0.3;
     // }
