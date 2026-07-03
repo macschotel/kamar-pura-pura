@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Bedroom from "./components/Bedroom";
 import Dreamcatcher from "./components/Dreamcatcher";
 import WishModal from "./components/WishModal";
@@ -19,9 +19,9 @@ function App() {
   const [wishModal, setWishModal] = useState(false);
   const [vaseModal, setVaseModal] = useState(false);
   const [wishes, setWishes] = useState([]);
-  const [selectedWish, setSelectedWish] = useState(null);
+  // const [selectedWish, setSelectedWish] = useState(null);
 
-  const audioRef = useRef();
+  // const audioRef = useRef();
 
   const bgs = ["/background/background.png"];
 
