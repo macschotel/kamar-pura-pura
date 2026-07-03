@@ -19,7 +19,7 @@ function App() {
   const [wishModal, setWishModal] = useState(false);
   const [vaseModal, setVaseModal] = useState(false);
   const [wishes, setWishes] = useState([]);
-  // const [selectedWish, setSelectedWish] = useState(null);
+  const [selectedWish, setSelectedWish] = useState(null);
 
   // const audioRef = useRef();
 
