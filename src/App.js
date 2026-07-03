@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Bedroom from "./components/Bedroom";
 import Dreamcatcher from "./components/Dreamcatcher";
 import WishModal from "./components/WishModal";
@@ -22,7 +22,7 @@ function App() {
   const [wishes, setWishes] = useState([]);
   const [selectedWish, setSelectedWish] = useState(null);
 
-  // const audioRef = useRef();
+  const audioRef = useRef();
 
   const bgs = ["/background/background.png"];
 
@@ -114,13 +114,16 @@ function App() {
 
   useEffect(() => {
     fetchWishes();
-    // if (audioRef.current) {
-    //   audioRef.current.volume = 0.3;
-    // }
+    if (audioRef.current) {
+      audioRef.current.volume = 0.5;
+    }
   }, []);
 
   return (
     <Bedroom imagePath={bg}>
+      <audio ref={audioRef} autoPlay loop>
+        <source src="/audio/sound.mp3" type="audio/mp3" />
+      </audio>
       <Dreamcatcher onClick={handleDreamcatcherClick} />
       {wishModal && (
         <WishModal
