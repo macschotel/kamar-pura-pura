@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Bedroom from "./components/Bedroom";
 import Dreamcatcher from "./components/Dreamcatcher";
 import WishModal from "./components/WishModal";
