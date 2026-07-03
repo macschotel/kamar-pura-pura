@@ -95,6 +95,7 @@ const VaseModal = ({ onClose }) => {
               Selamat ulangtahun! Terima kasih sudah bertahan sampai tahun yang
               ke-31!
               <br></br>
+              <br></br>
               Terima kasih juga sudah selalu menjadi orang yang hebat, keren,
               kuat, luar biasa meskipun selama 31 tahun kehidupan ini, banyak
               hal yang udah Kak Anggi lewati dan nggak semuanya indah. Terima
@@ -103,6 +104,7 @@ const VaseModal = ({ onClose }) => {
               menjadi orang yang lebih baik, dan nggak pernah berhenti untuk
               belajar. Aku nggak pernah nggak merasa kagum sama Kak Anggi
               muahahaha.
+              <br></br>
               <br></br>
               Meskipun aku nggak bisa menjanjikan matahari akan selalu bersinar
               setiap hari, aku nggak bisa janjiin juga kalau hujan nggak akan
@@ -113,9 +115,11 @@ const VaseModal = ({ onClose }) => {
               satu sama lain. Mulai sekarang, kita berpetulanga bersama ya!
               Yeay.
               <br></br>
+              <br></br>
               Karena kita bakal melalui perjalanan panjang bersama, Kak Anggi
               nggak barus selalu lari, nggak harus selalu senyum, nggak harus
               selalu kuat, nggak harus selalu tertawa.
+              <br></br>
               <br></br>
               Mungkin ada kalanya Kak Anggi ngerasa capek, kita bisa berhenti
               sebentar sambil bercanda-bercanda, nonton film bareng, main game,
@@ -133,14 +137,17 @@ const VaseModal = ({ onClose }) => {
               sebentar, terus tengok barangkali ada yang harus diubah dalam
               rencana perjalanan kita.
               <br></br>
+              <br></br>
               Pokoknya mulai sekarang kita satu tim! Gimana pun musim kehidupan
               yang akan Kak Anggi lewati, aku juga akan berusaha untuk hadir di
               sampingmu uhuy.
+              <br></br>
               <br></br>
               Dan untuk semua yang akan terjadi di masa depan, aku akan selalu
               mendoakan yang terbaik untuk kebahagiaan Kak Anggi. Aku akan
               selalu berdoa untuk kesehatanmu, masa depanmu, dan berharap semoga
               hanya ada hal-hal baik yang mengikuti Kak Anggi.
+              <br></br>
               <br></br>
               Sekali lagi, terima kasih sudah mau bertahan sampai hari ini,
               terima kasih sudah jadi orang paling keren sedunia, terima kasih
