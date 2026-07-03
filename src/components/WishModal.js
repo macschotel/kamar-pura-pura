@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const WishModal = ({ onClose, onSave }) => {
+const WishModal = ({ onClose, onSave, isComplete }) => {
   const [wish, setWish] = useState("");
 
   const handleSubmit = (e) => {
@@ -37,85 +37,141 @@ const WishModal = ({ onClose, onSave }) => {
           position: "relative",
         }}
       >
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            position: "absolute",
-            top: "30%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "48%",
-            height: "50%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
-          <textarea
-            value={wish}
-            onChange={(e) => setWish(e.target.value)}
-            rows={4}
-            placeholder="Tulis harapanmu di sini!"
+        {!isComplete ? (
+          <form
+            onSubmit={handleSubmit}
             style={{
-              flex: 0.8,
-              width: "100%",
-              padding: "3%",
-              resize: "none",
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "clamp(0.8rem, 1.3vw, 1.1rem)",
-              borderRadius: "10px",
-              border: "none",
-              background: "rgba(228,210,243,0.91)",
-              boxSizing: "border-box",
-            }}
-          />
-          <div
-            style={{
+              position: "absolute",
+              top: "30%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "48%",
+              height: "50%",
               display: "flex",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-              width: "100%",
+              flexDirection: "column",
+              justifyContent: "space-between",
             }}
           >
-            <button
-              type="submit"
+            <textarea
+              value={wish}
+              onChange={(e) => setWish(e.target.value)}
+              rows={4}
+              placeholder="Tulis harapanmu di sini!"
               style={{
-                background: "none",
+                flex: 0.8,
+                width: "100%",
+                padding: "3%",
+                resize: "none",
+                fontFamily: "Poppins, sans-serif",
+                fontSize: "clamp(0.8rem, 1.3vw, 1.1rem)",
+                borderRadius: "10px",
                 border: "none",
-                padding: 0,
-                cursor: "pointer",
+                background: "rgba(228,210,243,0.91)",
+                boxSizing: "border-box",
+              }}
+            />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+                width: "100%",
               }}
             >
-              <img
-                src="/button/kirim.png"
-                alt="Tutup"
+              <button
+                type="submit"
                 style={{
-                  width: "50%",
-                  height: "auto",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
                 }}
-              />
-            </button>
+              >
+                <img
+                  src="/button/kirim.png"
+                  alt="Tutup"
+                  style={{
+                    width: "50%",
+                    height: "auto",
+                  }}
+                />
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                style={{
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                }}
+              >
+                <img
+                  src="/button/batal.png"
+                  alt="Batal"
+                  style={{
+                    width: "50%",
+                    height: "auto",
+                  }}
+                />
+              </button>
+            </div>
+          </form>
+        ) : (
+          <div
+            style={{
+              position: "absolute",
+              top: "30%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "48%",
+              height: "50%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
+            <div>
+              <h2
+                style={{
+                  fontFamily: "Poppins",
+                  color: "#5D4A78",
+                }}
+              >
+                Konstelasi bintang Cancer sudah lengkap!
+              </h2>
+
+              <p
+                style={{
+                  fontFamily: "Poppins",
+                  color: "#5D4A78",
+                  lineHeight: 1.6,
+                }}
+              >
+                Terima kasih telah menitipkan harapanmu. Sekarang harapan itu
+                sudah hidup bersama para bintang di angkasa!
+              </p>
+            </div>
+
             <button
               type="button"
               onClick={onClose}
               style={{
                 background: "none",
                 border: "none",
-                padding: 0,
                 cursor: "pointer",
               }}
             >
               <img
                 src="/button/batal.png"
-                alt="Batal"
-                style={{
-                  width: "50%",
-                  height: "auto",
-                }}
+                alt="Close"
+                style={{ width: "50%" }}
               />
             </button>
           </div>
-        </form>
+        )}
       </div>
     </div>
   );

@@ -35,7 +35,6 @@ const VaseModal = ({ onClose }) => {
       >
         {/* Isi Teks */}
         <div
-          className="patrick-hand-regular"
           style={{
             position: "absolute",
             top: "clamp(20%, 35%, 80%)",
@@ -43,6 +42,7 @@ const VaseModal = ({ onClose }) => {
             width: "60%",
             height: "40%",
             overflowY: "auto",
+            fontFamily: "Poppins, sans-serif",
           }}
         >
           <p

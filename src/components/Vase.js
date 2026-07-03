@@ -6,11 +6,11 @@ const Vase = ({ onClick }) => {
       onClick={onClick}
       style={{
         position: "absolute",
-        bottom: "4%",
-        right: "17%",
-        width: "40%",
+        bottom: "clamp(12px, 4vh, 40px)",
+        right: "clamp(20px, 17vw, 180px)",
+        width: "clamp(80px, 15vw, 180px)",
         maxWidth: "170px",
-        minWidth: "70px",
+        minWidth: "50px",
         cursor: "pointer",
         zIndex: 2,
       }}
