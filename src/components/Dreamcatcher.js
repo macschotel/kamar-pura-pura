@@ -16,7 +16,7 @@ const Dreamcatcher = ({ onClick }) => {
       }}
     >
       <img
-        src="/dreamcatcher/dreamcatcher.png"
+        src="/dreamcatcher/dreamcatcher-no-outer-glow.png"
         alt="Dreamcatcher"
         style={{
           width: "100%",
