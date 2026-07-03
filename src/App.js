@@ -2,12 +2,15 @@ import React, { useEffect, useState, useRef } from "react";
 import Bedroom from "./components/Bedroom";
 import Dreamcatcher from "./components/Dreamcatcher";
 import WishModal from "./components/WishModal";
+import Vase from "./components/Vase";
+import VaseModal from "./components/VaseModal";
 
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 
 function App() {
   const [wishModal, setWishModal] = useState(false);
+  const [vaseModal, setVaseModal] = useState(false);
 
   const bgs = ["/background/background.png"];
   const stars = [
@@ -22,6 +25,10 @@ function App() {
 
   const handleDreamcatcherClick = () => {
     setWishModal(true);
+  };
+
+  const handleVaseClick = () => {
+    setVaseModal(true);
   };
 
   const handleSaveWish = async (wishText) => {
@@ -55,6 +62,8 @@ function App() {
           onSave={handleSaveWish}
         />
       )}
+      <Vase onClick={handleVaseClick} />
+      {vaseModal && <VaseModal onClose={() => setVaseModal(false)} />}
     </Bedroom>
   );
 }

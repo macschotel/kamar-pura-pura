@@ -1,14 +1,14 @@
 import React from "react";
 
-const Dreamcatcher = ({ onClick }) => {
+const Vase = ({ onClick }) => {
   return (
     <div
       onClick={onClick}
       style={{
         position: "absolute",
-        top: "6%",
-        left: "20%",
-        width: "20%",
+        bottom: "4%",
+        right: "17%",
+        width: "40%",
         maxWidth: "170px",
         minWidth: "70px",
         cursor: "pointer",
@@ -16,8 +16,8 @@ const Dreamcatcher = ({ onClick }) => {
       }}
     >
       <img
-        src="/dreamcatcher/dreamcatcher.png"
-        alt="Dreamcatcher"
+        src="/vase/vas-bunga.png"
+        alt="Vase"
         style={{
           width: "100%",
           height: "auto",
@@ -34,4 +34,4 @@ const Dreamcatcher = ({ onClick }) => {
   );
 };
 
-export default Dreamcatcher;
+export default Vase;

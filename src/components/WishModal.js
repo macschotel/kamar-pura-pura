@@ -41,13 +41,14 @@ const WishModal = ({ onClose, onSave }) => {
           onSubmit={handleSubmit}
           style={{
             position: "absolute",
-            top: "27%",
+            top: "30%",
             left: "50%",
             transform: "translateX(-50%)",
             width: "48%",
-            height: "46%",
+            height: "50%",
             display: "flex",
             flexDirection: "column",
+            justifyContent: "space-between",
           }}
         >
           <textarea
@@ -56,21 +57,20 @@ const WishModal = ({ onClose, onSave }) => {
             rows={4}
             placeholder="Tulis harapanmu di sini!"
             style={{
-              flex: 1,
+              flex: 0.8,
               width: "100%",
               padding: "3%",
               resize: "none",
               fontFamily: "Poppins, sans-serif",
               fontSize: "clamp(0.8rem, 1.3vw, 1.1rem)",
               borderRadius: "10px",
-              border: "1px solid #b9a9c8",
+              border: "none",
               background: "rgba(228,210,243,0.91)",
               boxSizing: "border-box",
             }}
           />
           <div
             style={{
-              marginTop: "4%",
               display: "flex",
               justifyContent: "space-evenly",
               alignItems: "center",
