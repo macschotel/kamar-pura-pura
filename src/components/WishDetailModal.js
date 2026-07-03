@@ -33,21 +33,6 @@ const WishDetailModal = ({ wish, onClose }) => {
           justifyContent: "space-between",
         }}
       >
-        <p
-          style={{
-            position: "absolute",
-            top: "clamp(27%, 24%, 22%)",
-            left: "24%",
-            fontSize: "clamp(1.5rem, 1.7rem, 2.5rem)",
-            margin: 0,
-            textAlign: "justify",
-            color: "#633e30",
-            fontFamily: "Poppins, sans-serif",
-          }}
-        >
-          {wish.year}
-        </p>
-
         <div
           style={{
             position: "absolute",
@@ -60,26 +45,18 @@ const WishDetailModal = ({ wish, onClose }) => {
             paddingRight: "0.5rem",
           }}
         >
-          {wish.wishes.map((w, i) => (
-            <React.Fragment key={i}>
-              <p
-                key={i}
-                style={{
-                  fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
-                  lineHeight: "1.2",
-                  marginBottom: "0.5rem",
-                  wordBreak: "break-word",
-                  textAlign: "justify",
-                  fontFamily: "Poppins, sans-serif",
-                }}
-              >
-                {w.text}
-              </p>
-              {wish.wishes.length > 1 && (
-                <hr style={{ border: "1px solid #633e30" }} />
-              )}
-            </React.Fragment>
-          ))}
+          <p
+            style={{
+              fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
+              lineHeight: "1.2",
+              marginBottom: "0.5rem",
+              wordBreak: "break-word",
+              textAlign: "justify",
+              fontFamily: "Poppins, sans-serif",
+            }}
+          >
+            {wish.wish}
+          </p>
         </div>
 
         <div

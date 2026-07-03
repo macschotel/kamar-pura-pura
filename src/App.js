@@ -1,9 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Bedroom from "./components/Bedroom";
 import Dreamcatcher from "./components/Dreamcatcher";
 import WishModal from "./components/WishModal";
 import Vase from "./components/Vase";
 import VaseModal from "./components/VaseModal";
+import WishDetailModal from "./components/WishDetailModal";
 
 import {
   collection,
@@ -111,6 +112,14 @@ function App() {
     setWishes(wishList);
   };
 
+  useEffect(() => {
+    fetchWishes();
+    // fetchWishesFromMe();
+    // if (audioRef.current) {
+    //   audioRef.current.volume = 0.3;
+    // }
+  }, []);
+
   return (
     <Bedroom imagePath={bg}>
       <Dreamcatcher onClick={handleDreamcatcherClick} />
@@ -170,6 +179,13 @@ function App() {
           />
         );
       })}
+
+      {selectedWish && (
+        <WishDetailModal
+          wish={selectedWish}
+          onClose={() => setSelectedWish(null)}
+        />
+      )}
     </Bedroom>
   );
 }
