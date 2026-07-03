@@ -3,9 +3,9 @@ import React from "react";
 const contentStyle = {
   position: "absolute",
   top: "27%",
-  left: "29%",
-  width: "42%",
-  height: "50%",
+  left: "10%",
+  width: "80%",
+  height: "45%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
@@ -32,30 +32,32 @@ const WishDetailModal = ({ wish, onClose }) => {
     <div
       style={{
         position: "fixed",
-        inset: 0,
+        top: 0,
+        left: 0,
         width: "100%",
         height: "100%",
         backgroundColor: "rgba(214, 199, 238, 0.5)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        zIndex: 100,
-        padding: "clamp(12px, 3vw, 32px)",
-        boxSizing: "border-box",
+        zIndex: 1000,
       }}
     >
       <div
         style={{
-          backgroundImage: `url("/wish/postcard-cap-tanpa-teks.png")`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          width: "min(96vw, 1000px)",
-          maxHeight: "92vh",
-          aspectRatio: "4 / 3",
           position: "relative",
+          width: "clamp(300px, 90vw, 500px)",
+          flexShrink: 0,
         }}
       >
+        <img
+          src="/wish/postcard-cap-tanpa-teks.png"
+          alt=""
+          style={{
+            width: "100%",
+            display: "block",
+          }}
+        />
         <div style={contentStyle}>
           <div
             style={{

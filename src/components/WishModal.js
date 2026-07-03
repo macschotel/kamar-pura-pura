@@ -12,14 +12,13 @@ const WishModal = ({ onClose, onSave, isComplete }) => {
 
   const contentStyle = {
     position: "absolute",
-    top: "30%",
+    top: "25%",
     left: "50%",
     transform: "translateX(-50%)",
-    width: "min(40%, 520px)",
-    height: "50%",
+    width: "min(80%, 520px)",
+    height: "60%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
     alignItems: "center",
     boxSizing: "border-box",
   };
@@ -42,30 +41,32 @@ const WishModal = ({ onClose, onSave, isComplete }) => {
     <div
       style={{
         position: "fixed",
-        inset: 0,
+        top: 0,
+        left: 0,
         width: "100%",
         height: "100%",
         backgroundColor: "rgba(214, 199, 238, 0.5)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        zIndex: 100,
-        padding: "clamp(12px, 3vw, 32px)",
-        boxSizing: "border-box",
+        zIndex: 1000,
       }}
     >
       <div
         style={{
-          backgroundImage: `url("/wish/template-isi-wish-tanpa-teks.png")`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          width: "min(96vw, 1000px)",
-          maxHeight: "92vh",
-          aspectRatio: "4 / 3",
           position: "relative",
+          width: "clamp(300px, 90vw, 500px)",
+          flexShrink: 0,
         }}
       >
+        <img
+          src="/wish/template-isi-wish-tanpa-teks.png"
+          alt=""
+          style={{
+            width: "100%",
+            display: "block",
+          }}
+        />
         {!isComplete ? (
           <form onSubmit={handleSubmit} style={contentStyle}>
             <textarea
@@ -84,6 +85,7 @@ const WishModal = ({ onClose, onSave, isComplete }) => {
                 border: "none",
                 background: "rgba(228,210,243,0.91)",
                 boxSizing: "border-box",
+                marginBottom: "10%",
               }}
             />
 
@@ -114,13 +116,27 @@ const WishModal = ({ onClose, onSave, isComplete }) => {
             </div>
           </form>
         ) : (
-          <div style={contentStyle}>
+          <div
+            style={{
+              position: "absolute",
+              top: "35%",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "min(80%, 520px)",
+              height: "60%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              boxSizing: "border-box",
+            }}
+          >
             <div
               style={{
                 width: "100%",
                 overflowY: "auto",
                 padding: "0 2%",
                 boxSizing: "border-box",
+                marginBottom: "10%",
               }}
             >
               <h2
@@ -151,9 +167,20 @@ const WishModal = ({ onClose, onSave, isComplete }) => {
               </p>
             </div>
 
-            <button type="button" onClick={onClose} style={buttonStyle}>
+            <button
+              type="button"
+              onClick={onClose}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <img
-                src="/button/batal.png"
+                src="/button/tutup.png"
                 alt="Close"
                 style={buttonImageStyle}
               />
