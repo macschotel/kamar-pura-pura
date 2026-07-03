@@ -1,19 +1,47 @@
 import React from "react";
 
+const contentStyle = {
+  position: "absolute",
+  top: "27%",
+  left: "29%",
+  width: "42%",
+  height: "50%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "center",
+  boxSizing: "border-box",
+};
+
+const buttonStyle = {
+  background: "none",
+  border: "none",
+  padding: 0,
+  cursor: "pointer",
+  display: "flex",
+  justifyContent: "center",
+};
+
+const buttonImageStyle = {
+  width: "clamp(70px, 12vw, 120px)",
+  height: "auto",
+};
+
 const WishDetailModal = ({ wish, onClose }) => {
   return (
     <div
       style={{
         position: "fixed",
-        top: 0,
-        left: 0,
+        inset: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "rgba(241, 225, 152, 0.5)",
+        backgroundColor: "rgba(214, 199, 238, 0.5)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         zIndex: 100,
+        padding: "clamp(12px, 3vw, 32px)",
+        boxSizing: "border-box",
       }}
     >
       <div
@@ -22,68 +50,52 @@ const WishDetailModal = ({ wish, onClose }) => {
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          width: "90%",
-          maxWidth: "400px",
-          height: "90vh",
-          padding: "4rem 1.5rem",
-          boxSizing: "border-box",
+          width: "min(96vw, 1000px)",
+          maxHeight: "92vh",
+          aspectRatio: "4 / 3",
           position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: "clamp(32%, 33%, 35%)",
-            left: "24%",
-            width: "clamp(47%, 53%, 55%)",
-            height: "clamp(43%, 45%, 55%)",
-            overflowY: "auto",
-            boxSizing: "border-box",
-            paddingRight: "0.5rem",
-          }}
-        >
-          <p
+        <div style={contentStyle}>
+          <div
             style={{
-              fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
-              lineHeight: "1.2",
-              marginBottom: "0.5rem",
-              wordBreak: "break-word",
-              textAlign: "justify",
-              fontFamily: "Poppins, sans-serif",
+              width: "100%",
+              overflowY: "auto",
+              padding: "0 2%",
+              boxSizing: "border-box",
             }}
           >
-            {wish.wish}
-          </p>
+            <p
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                color: "#2b2330",
+                fontSize: "clamp(0.75rem, 1.6vw, 1.1rem)",
+                lineHeight: 1.5,
+                margin: 0,
+                textAlign: "justify",
+              }}
+            >
+              {wish.wish}
+            </p>
+          </div>
         </div>
 
         <div
           style={{
             position: "absolute",
-            bottom: "clamp(8%, 10%, 12%)",
+            bottom: "20%",
             left: "50%",
             transform: "translateX(-50%)",
+            width: "min(30%, 520px)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "center",
+            boxSizing: "border-box",
           }}
         >
-          <button
-            onClick={onClose}
-            style={{
-              background: "none",
-              border: "none",
-              padding: 0,
-              cursor: "pointer",
-            }}
-          >
-            <img
-              src="/button/batal.png"
-              alt="Tutup"
-              style={{
-                width: "clamp(60px, 66px, 75px)",
-                height: "auto",
-              }}
-            />
+          <button type="button" onClick={onClose} style={buttonStyle}>
+            <img src="/button/batal.png" alt="Close" style={buttonImageStyle} />
           </button>
         </div>
       </div>
